@@ -19,7 +19,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      title: 'Nuxt 3 Demo',
       link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
       ]
     },
@@ -32,7 +34,8 @@ export default defineNuxtConfig({
     '/': { prerender: true },
     '/about': { prerender: true },
     '/works': { swr: 60 },
-    '/works/**': { swr: 60 }
+    '/works/**': { swr: 60 },
+    '/favicon.ico': { redirect: '/favicon.svg' }
   },
   hooks: {
     'pages:extend'(pages) {
